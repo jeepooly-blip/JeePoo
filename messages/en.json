@@ -1,6 +1,86 @@
 {
-  "common": {
-    "welcome": "مرحبا بك في JeePoo",
-    "loading": "جار التحميل..."
+  "landing": {
+    "hero": {
+      "title": "Launch Your Online Store in Minutes",
+      "subtitle": "Complete platform to manage your e-commerce business easily and efficiently - Built for bakeries, groceries, and florists in Jordan",
+      "cta": "Get Started Free",
+      "learnMore": "Learn More",
+      "cardTitle": "Your Online Store Ready in Minutes",
+      "cardSubtitle": "Ready to receive orders"
+    },
+    "stats": {
+      "stores": "Active Stores",
+      "orders": "Monthly Orders",
+      "satisfaction": "Satisfaction"
+    },
+    "features": {
+      "title": "Platform Features",
+      "subtitle": "Everything you need to run your online store successfully",
+      "easySetup": {
+        "title": "Quick & Easy Setup",
+        "description": "Create your store in less than 5 minutes with no technical expertise required. User-friendly interface designed for the Jordanian market"
+      },
+      "whatsapp": {
+        "title": "WhatsApp Orders",
+        "description": "Receive orders directly on WhatsApp. Instant communication with your customers and increased sales"
+      },
+      "multiPayment": {
+        "title": "Multiple Payment Methods",
+        "description": "Support cash on delivery and online payments. Make purchasing easier for your customers"
+      },
+      "customDomain": {
+        "title": "Custom Domain",
+        "description": "Get a custom link for your store like yourbrand.jeepoo.com to build a strong brand identity"
+      },
+      "inventory": {
+        "title": "Inventory Management",
+        "description": "Track your products and inventory easily. Automatic alerts when stock runs low"
+      },
+      "analytics": {
+        "title": "Reports & Analytics",
+        "description": "Monitor your sales and store performance through a comprehensive and easy-to-understand dashboard"
+      }
+    },
+    "howItWorks": {
+      "title": "How It Works?",
+      "subtitle": "Three simple steps to launch your store",
+      "step1": {
+        "title": "Create Free Account",
+        "description": "Create your account in less than a minute and start adding products immediately"
+      },
+      "step2": {
+        "title": "Add Your Products",
+        "description": "Upload product images and add prices and details simply"
+      },
+      "step3": {
+        "title": "Start Selling",
+        "description": "Share your store link with customers and start receiving orders"
+      }
+    },
+    "cta": {
+      "title": "Ready to Launch Your Store?",
+      "subtitle": "Join hundreds of merchants who trust JeePoo to manage their business",
+      "button": "Start Your Store Free"
+    },
+    "common": {
+      "login": "Login",
+      "register": "Create Free Account"
+    },
+    "footer": {
+      "description": "The leading e-commerce platform for small and medium businesses in Jordan",
+      "company": "Company",
+      "about": "About Us",
+      "team": "Team",
+      "careers": "Careers",
+      "product": "Product",
+      "features": "Features",
+      "pricing": "Pricing",
+      "docs": "Documentation",
+      "support": "Support",
+      "help": "Help",
+      "contact": "Contact Us",
+      "privacy": "Privacy",
+      "rights": "All rights reserved"
+    }
   }
 }
