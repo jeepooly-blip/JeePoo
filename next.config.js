@@ -16,12 +16,13 @@ const nextConfig = {
       },
     ],
   },
-  // Enable experimental features for better subdomain handling
   experimental: {
     serverActions: {
       allowedOrigins: ['*.jeepoo.com', 'localhost:3000'],
     },
   },
+  // Add this to enable dynamic rendering
+  output: 'standalone',
 }
 
 module.exports = withNextIntl(nextConfig);
