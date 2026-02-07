@@ -46,19 +46,17 @@ export default async function StorefrontPage() {
             href="/"
             className="inline-block px-6 py-3 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition"
           >
-            العودة للرئيسية / Go to Home
+            العودة للرئيسية
           </Link>
         </div>
       </div>
     );
   }
 
+  const themeColor = vendor.themeColor || '#16a34a';
+
   return (
-    <div 
-      className="min-h-screen bg-gradient-to-br from-gray-50 to-white"
-      style={{ '--theme-color': vendor.themeColor } as any}
-    >
-      {/* Header */}
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
       <header className="bg-white border-b sticky top-0 z-50 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center justify-between">
@@ -72,7 +70,7 @@ export default async function StorefrontPage() {
               ) : (
                 <div 
                   className="w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-xl"
-                  style={{ backgroundColor: vendor.themeColor }}
+                  style={{ backgroundColor: themeColor }}
                 >
                   {vendor.storeNameAr.charAt(0)}
                 </div>
@@ -88,7 +86,7 @@ export default async function StorefrontPage() {
             </div>
 
             <div className="flex items-center gap-4">
-              
+              <a
                 href={`https://wa.me/${vendor.whatsappNumber}`}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -114,15 +112,10 @@ export default async function StorefrontPage() {
         </div>
       </header>
 
-      {/* Products Grid */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="mb-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-2">
-            منتجاتنا
-          </h2>
-          <p className="text-gray-600">
-            {vendor.products.length} منتج متوفر
-          </p>
+          <h2 className="text-3xl font-bold text-gray-900 mb-2">منتجاتنا</h2>
+          <p className="text-gray-600">{vendor.products.length} منتج متوفر</p>
         </div>
 
         {vendor.products.length === 0 ? (
@@ -133,9 +126,7 @@ export default async function StorefrontPage() {
             <h3 className="text-xl font-semibold text-gray-900 mb-2">
               لا توجد منتجات حالياً
             </h3>
-            <p className="text-gray-600">
-              سيتم إضافة المنتجات قريباً
-            </p>
+            <p className="text-gray-600">سيتم إضافة المنتجات قريباً</p>
           </div>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
@@ -144,7 +135,6 @@ export default async function StorefrontPage() {
                 key={product.id}
                 className="bg-white rounded-xl shadow-md hover:shadow-xl transition overflow-hidden group"
               >
-                {/* Product Image */}
                 <div className="aspect-square bg-gray-100 relative overflow-hidden">
                   {product.imageUrl ? (
                     <img
@@ -171,7 +161,6 @@ export default async function StorefrontPage() {
                   )}
                 </div>
 
-                {/* Product Info */}
                 <div className="p-4">
                   <h3 className="font-bold text-lg text-gray-900 mb-1 line-clamp-1">
                     {product.nameAr}
@@ -185,7 +174,7 @@ export default async function StorefrontPage() {
                   <div className="flex items-center gap-2 mb-3">
                     <span 
                       className="text-2xl font-bold"
-                      style={{ color: vendor.themeColor }}
+                      style={{ color: themeColor }}
                     >
                       {product.price.toFixed(2)} د.أ
                     </span>
@@ -199,7 +188,7 @@ export default async function StorefrontPage() {
                   <button
                     disabled={product.stock <= 0}
                     className="w-full py-2 rounded-lg font-semibold text-white transition disabled:opacity-50 disabled:cursor-not-allowed hover:opacity-90"
-                    style={{ backgroundColor: vendor.themeColor }}
+                    style={{ backgroundColor: themeColor }}
                   >
                     {product.stock > 0 ? 'أضف للسلة' : 'نفذت الكمية'}
                   </button>
@@ -210,7 +199,6 @@ export default async function StorefrontPage() {
         )}
       </main>
 
-      {/* Footer */}
       <footer className="bg-gray-900 text-white py-8 mt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-gray-400">
