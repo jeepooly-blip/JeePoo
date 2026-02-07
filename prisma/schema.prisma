@@ -1,0 +1,99 @@
+// This is your Prisma schema file
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Vendor {
+  id            String    @id @default(uuid())
+  storeNameAr   String    // Arabic Name (Required)
+  storeNameEn   String?   // English Name (Optional)
+  slug          String    @unique // Used for subdomain (e.g., "ammanbakery")
+  ownerName     String
+  email         String    @unique
+  password      String    // Hashed password
+  
+  descriptionAr String    @default("") // Default description
+  descriptionEn String?
+  
+  // Contact & Payment
+  whatsappNumber String   // Format: "962790000000"
+  cliqQRUrl      String?  // URL to vendor's specific Cliq QR
+  cliqMerchantID String?
+  
+  // Branding
+  logoUrl       String?
+  themeColor    String    @default("#000000")
+  
+  // Delivery Settings
+  deliveryType  String    @default("flat_rate") 
+  deliveryFee   Float     @default(0.0)
+  
+  // FUTURE MARKETPLACE SWITCH
+  isActiveOnMarketplace Boolean @default(false)
+  commissionRate        Float?
+  
+  products      Product[]
+  orders        Order[]
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+}
+
+model Product {
+  id          String   @id @default(uuid())
+  vendorId    String
+  vendor      Vendor   @relation(fields: [vendorId], references: [id], onDelete: Cascade)
+  
+  // Bilingual Fields
+  nameAr      String   // Arabic Name (Required)
+  nameEn      String?  // English Name (Optional)
+  
+  descriptionAr String?  // Arabic description
+  descriptionEn String?  // English description
+  
+  price       Float    // Vendor sets their own price
+  comparePrice Float?  // Original price for showing discount
+  
+  imageUrl    String?  // Product Image
+  category    String   // e.g., "Bakery", "Floral", "Grocery"
+  
+  stock       Int      @default(0)
+  isVisible   Boolean  @default(true)
+  
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  @@index([vendorId])
+}
+
+model Order {
+  id              String   @id @default(uuid())
+  vendorId        String
+  vendor          Vendor   @relation(fields: [vendorId], references: [id], onDelete: Cascade)
+  
+  customerName    String
+  customerPhone   String
+  customerAddress String
+  
+  paymentMethod   String   // "CASH" or "CLIQ"
+  paymentStatus   String   @default("PENDING") // PENDING, PAID, VERIFIED
+  
+  totalAmount     Float
+  deliveryFee     Float
+  
+  // JSON object storing cart snapshot: [{productId, qty, price, name, nameAr}]
+  cartItems       Json     
+  
+  // Language of the order (to send correct WhatsApp msg)
+  orderLocale     String   @default("ar")
+  
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  
+  @@index([vendorId])
+  @@index([createdAt])
+}

@@ -1,0 +1,113 @@
+{
+  "common": {
+    "home": "الرئيسية",
+    "products": "المنتجات",
+    "cart": "السلة",
+    "checkout": "الدفع",
+    "login": "تسجيل الدخول",
+    "register": "إنشاء حساب",
+    "logout": "تسجيل الخروج",
+    "dashboard": "لوحة التحكم",
+    "settings": "الإعدادات",
+    "search": "بحث",
+    "loading": "جاري التحميل...",
+    "error": "حدث خطأ",
+    "success": "تم بنجاح",
+    "cancel": "إلغاء",
+    "save": "حفظ",
+    "delete": "حذف",
+    "edit": "تعديل",
+    "add": "إضافة",
+    "back": "رجوع",
+    "next": "التالي",
+    "submit": "إرسال",
+    "total": "المجموع",
+    "subtotal": "المجموع الفرعي",
+    "viewAll": "عرض الكل"
+  },
+  "landing": {
+    "hero": {
+      "title": "منصة جيبو للتجارة الإلكترونية",
+      "subtitle": "ابدأ متجرك الإلكتروني في دقائق - للمخابز والبقالات ومحلات الورود في الأردن",
+      "cta": "ابدأ الآن مجاناً",
+      "learnMore": "اعرف المزيد"
+    },
+    "features": {
+      "title": "لماذا جيبو؟",
+      "easySetup": {
+        "title": "إعداد سهل وسريع",
+        "description": "أنشئ متجرك الإلكتروني في دقائق بدون خبرة تقنية"
+      },
+      "whatsappOrders": {
+        "title": "طلبات عبر الواتساب",
+        "description": "استقبل طلباتك مباشرة على الواتساب"
+      },
+      "multiPayment": {
+        "title": "دفع نقدي أو كليك",
+        "description": "دعم كامل لطرق الدفع المحلية"
+      },
+      "customDomain": {
+        "title": "نطاق فرعي خاص",
+        "description": "احصل على رابط متجر احترافي مثل store.jeepoo.com"
+      }
+    }
+  },
+  "storefront": {
+    "featuredProducts": "المنتجات المميزة",
+    "allProducts": "جميع المنتجات",
+    "categories": "الفئات",
+    "addToCart": "أضف للسلة",
+    "outOfStock": "نفذت الكمية",
+    "inStock": "متوفر",
+    "productDetails": "تفاصيل المنتج"
+  },
+  "cart": {
+    "title": "سلة التسوق",
+    "empty": "سلتك فارغة",
+    "continueShopping": "متابعة التسوق",
+    "removeItem": "حذف",
+    "quantity": "الكمية",
+    "price": "السعر",
+    "deliveryFee": "رسوم التوصيل",
+    "proceedToCheckout": "إتمام الطلب"
+  },
+  "checkout": {
+    "title": "إتمام الطلب",
+    "customerInfo": "معلومات العميل",
+    "name": "الاسم الكامل",
+    "phone": "رقم الهاتف",
+    "address": "العنوان",
+    "paymentMethod": "طريقة الدفع",
+    "cash": "الدفع نقداً عند الاستلام",
+    "cliq": "الدفع عبر كليك",
+    "orderSummary": "ملخص الطلب",
+    "placeOrder": "تأكيد الطلب",
+    "sendToWhatsApp": "إرسال عبر الواتساب",
+    "cliqInstructions": "قم بمسح رمز QR لإتمام الدفع عبر كليك، ثم أكد الطلب",
+    "requiredField": "هذا الحقل مطلوب",
+    "invalidPhone": "رقم الهاتف غير صحيح"
+  },
+  "dashboard": {
+    "welcome": "مرحباً",
+    "overview": "نظرة عامة",
+    "products": "المنتجات",
+    "orders": "الطلبات",
+    "settings": "الإعدادات",
+    "addProduct": "إضافة منتج",
+    "editProduct": "تعديل المنتج",
+    "productName": "اسم المنتج",
+    "productNameAr": "الاسم بالعربية",
+    "productNameEn": "الاسم بالإنجليزية",
+    "description": "الوصف",
+    "price": "السعر",
+    "comparePrice": "السعر قبل الخصم",
+    "category": "الفئة",
+    "stock": "الكمية المتوفرة",
+    "image": "الصورة",
+    "visible": "ظاهر في المتجر",
+    "uploadImage": "رفع صورة",
+    "saveProduct": "حفظ المنتج",
+    "deleteProduct": "حذف المنتج",
+    "confirmDelete": "هل أنت متأكد من حذف هذا المنتج؟"
+  }
+}

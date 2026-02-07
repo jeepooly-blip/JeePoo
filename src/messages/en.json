@@ -1,0 +1,113 @@
+{
+  "common": {
+    "home": "Home",
+    "products": "Products",
+    "cart": "Cart",
+    "checkout": "Checkout",
+    "login": "Login",
+    "register": "Register",
+    "logout": "Logout",
+    "dashboard": "Dashboard",
+    "settings": "Settings",
+    "search": "Search",
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "success": "Success",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "add": "Add",
+    "back": "Back",
+    "next": "Next",
+    "submit": "Submit",
+    "total": "Total",
+    "subtotal": "Subtotal",
+    "viewAll": "View All"
+  },
+  "landing": {
+    "hero": {
+      "title": "JeePoo E-Commerce Platform",
+      "subtitle": "Launch your online store in minutes - For bakeries, groceries, and florists in Jordan",
+      "cta": "Start Free Now",
+      "learnMore": "Learn More"
+    },
+    "features": {
+      "title": "Why JeePoo?",
+      "easySetup": {
+        "title": "Easy & Fast Setup",
+        "description": "Create your online store in minutes without technical expertise"
+      },
+      "whatsappOrders": {
+        "title": "WhatsApp Orders",
+        "description": "Receive your orders directly on WhatsApp"
+      },
+      "multiPayment": {
+        "title": "Cash or Cliq Payment",
+        "description": "Full support for local payment methods"
+      },
+      "customDomain": {
+        "title": "Custom Subdomain",
+        "description": "Get a professional store link like store.jeepoo.com"
+      }
+    }
+  },
+  "storefront": {
+    "featuredProducts": "Featured Products",
+    "allProducts": "All Products",
+    "categories": "Categories",
+    "addToCart": "Add to Cart",
+    "outOfStock": "Out of Stock",
+    "inStock": "In Stock",
+    "productDetails": "Product Details"
+  },
+  "cart": {
+    "title": "Shopping Cart",
+    "empty": "Your cart is empty",
+    "continueShopping": "Continue Shopping",
+    "removeItem": "Remove",
+    "quantity": "Quantity",
+    "price": "Price",
+    "deliveryFee": "Delivery Fee",
+    "proceedToCheckout": "Proceed to Checkout"
+  },
+  "checkout": {
+    "title": "Checkout",
+    "customerInfo": "Customer Information",
+    "name": "Full Name",
+    "phone": "Phone Number",
+    "address": "Address",
+    "paymentMethod": "Payment Method",
+    "cash": "Cash on Delivery",
+    "cliq": "Pay with Cliq",
+    "orderSummary": "Order Summary",
+    "placeOrder": "Place Order",
+    "sendToWhatsApp": "Send via WhatsApp",
+    "cliqInstructions": "Scan the QR code to complete payment via Cliq, then confirm the order",
+    "requiredField": "This field is required",
+    "invalidPhone": "Invalid phone number"
+  },
+  "dashboard": {
+    "welcome": "Welcome",
+    "overview": "Overview",
+    "products": "Products",
+    "orders": "Orders",
+    "settings": "Settings",
+    "addProduct": "Add Product",
+    "editProduct": "Edit Product",
+    "productName": "Product Name",
+    "productNameAr": "Name in Arabic",
+    "productNameEn": "Name in English",
+    "description": "Description",
+    "price": "Price",
+    "comparePrice": "Compare Price",
+    "category": "Category",
+    "stock": "Stock",
+    "image": "Image",
+    "visible": "Visible in Store",
+    "uploadImage": "Upload Image",
+    "saveProduct": "Save Product",
+    "deleteProduct": "Delete Product",
+    "confirmDelete": "Are you sure you want to delete this product?"
+  }
+}
