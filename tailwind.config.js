@@ -37,8 +37,5 @@ module.exports = {
       },
     },
   },
-  plugins: [
-    // Add RTL plugin for better bidirectional support
-    require('@tailwindcss/forms'),
-  ],
+  plugins: [],
 }
