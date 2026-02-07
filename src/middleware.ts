@@ -1,78 +1,43 @@
 import { NextRequest, NextResponse } from 'next/server';
-import createMiddleware from 'next-intl/middleware';
 
-// Locales configuration
-const locales = ['ar', 'en'];
-const defaultLocale = 'ar';
-
-// Create next-intl middleware
-const intlMiddleware = createMiddleware({
-  locales,
-  defaultLocale,
-  localePrefix: 'as-needed', // Only add locale prefix when not default
-});
-
-export async function middleware(request: NextRequest) {
-  const { hostname } = request.nextUrl;
+export function middleware(request: NextRequest) {
+  const hostname = request.nextUrl.hostname;
   const pathname = request.nextUrl.pathname;
 
-  // Get locale from cookie or Accept-Language header
-  const locale = request.cookies.get('NEXT_LOCALE')?.value || defaultLocale;
-
-  // Development mode - localhost
-  if (hostname === 'localhost' || hostname === '127.0.0.1') {
-    // Check if it's a subdomain test (e.g., store.localhost:3000)
-    const parts = hostname.split('.');
-    if (parts.length > 1 && parts[0] !== 'www') {
-      const subdomain = parts[0];
-      
-      // Clone the URL and add subdomain as header
-      const response = intlMiddleware(request);
-      response.headers.set('x-vendor-slug', subdomain);
-      response.headers.set('x-is-storefront', 'true');
-      
-      return response;
-    }
-    
-    // Main domain in development
-    return intlMiddleware(request);
+  // Development mode
+  if (hostname === 'localhost' || hostname.includes('127.0.0.1')) {
+    return NextResponse.next();
   }
 
-  // Production mode - jeepoo.com
-  const mainDomain = process.env.NEXT_PUBLIC_MAIN_DOMAIN || 'jeepoo.com';
-  
-  // Check if this is the main domain or www subdomain
+  // Production mode
+  const mainDomain = 'jeepoo.vercel.app';
+
+  // Main domain or www - show landing page
   if (hostname === mainDomain || hostname === `www.${mainDomain}`) {
-    // Landing page or dashboard routes
-    return intlMiddleware(request);
+    return NextResponse.next();
   }
 
-  // Extract subdomain for vendor storefront
+  // Subdomain detected
   if (hostname.endsWith(`.${mainDomain}`)) {
     const subdomain = hostname.replace(`.${mainDomain}`, '');
-    
-    // Avoid processing on 'www' subdomain
-    if (subdomain === 'www') {
-      return intlMiddleware(request);
+
+    // Skip if already on the store route
+    if (pathname.startsWith('/store/')) {
+      return NextResponse.next();
     }
 
-    // This is a vendor storefront
-    const response = intlMiddleware(request);
-    response.headers.set('x-vendor-slug', subdomain);
-    response.headers.set('x-is-storefront', 'true');
-    
-    return response;
+    // Rewrite to the store page
+    const url = request.nextUrl.clone();
+    url.pathname = `/store/${subdomain}${pathname}`;
+
+    return NextResponse.rewrite(url);
   }
 
-  // Default: process with intl middleware
-  return intlMiddleware(request);
+  return NextResponse.next();
 }
 
 export const config = {
-  // Match all pathnames except for:
-  // - API routes
-  // - Static files (_next/static)
-  // - Image optimization files (_next/image)
-  // - Favicon, etc.
-  matcher: ['/((?!api|_next/static|_next/image|favicon.ico|.*\\..*).*)'],
+  matcher: [
+    '/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)',
+  ],
 };
