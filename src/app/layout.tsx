@@ -1,4 +1,6 @@
 import type { Metadata } from 'next';
+// Ensure you import your global CSS file!
+import './globals.css'; 
 
 export const metadata: Metadata = {
   title: 'JeePoo - Multi-Vendor E-Commerce Platform',
@@ -11,5 +13,12 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return children;
+  return (
+    // Next.js REQUIRES these HTML and BODY tags here
+    <html lang="en">
+      <body>
+        {children}
+      </body>
+    </html>
+  );
 }
