@@ -35,12 +35,12 @@ export default async function LocaleLayout({
   const isRTL = locale === 'ar';
 
   return (
-    <html lang={locale} dir={isRTL ? 'rtl' : 'ltr'} className={`${cairo.variable} ${inter.variable}`}>
-      <body className={isRTL ? 'font-[family-name:var(--font-cairo)]' : 'font-[family-name:var(--font-inter)]'}>
-        <NextIntlClientProvider messages={messages} locale={locale}>
-          {children}
-        </NextIntlClientProvider>
-      </body>
-    </html>
+    // REMOVED <html> and <body> tags here because the Root Layout already has them.
+    // We use a <div> wrapper instead to apply the font classes.
+    <div className={isRTL ? 'font-[family-name:var(--font-cairo)]' : 'font-[family-name:var(--font-inter)]'}>
+      <NextIntlClientProvider messages={messages} locale={locale}>
+        {children}
+      </NextIntlClientProvider>
+    </div>
   );
 }
